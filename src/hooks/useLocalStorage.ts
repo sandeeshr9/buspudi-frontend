@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 
-const PREFIX = "buspudi:";
+const PREFIX = "wayzo:";
+const LEGACY_PREFIX = "buspudi:";
 
 export function readStorage<T>(key: string, fallback: T): T {
   try {
-    const raw = localStorage.getItem(PREFIX + key);
+    const raw = localStorage.getItem(PREFIX + key) ?? localStorage.getItem(LEGACY_PREFIX + key);
     return raw ? (JSON.parse(raw) as T) : fallback;
   } catch {
     return fallback;

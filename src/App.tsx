@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { Toaster } from "sonner";
 import { LoadingSkeleton } from "@/components/common/States";
 import { AppLayout } from "@/components/layout/AppLayout";
@@ -19,21 +19,36 @@ const OccupancyPage = lazy(() => import("@/pages/OccupancyPage"));
 const AlertsPage = lazy(() => import("@/pages/AlertsPage"));
 const AccessibilityPage = lazy(() => import("@/pages/AccessibilityPage"));
 const SavedPage = lazy(() => import("@/pages/SavedPage"));
+const OfflinePage = lazy(() => import("@/pages/OfflinePage"));
 const ProfilePage = lazy(() => import("@/pages/ProfilePage"));
 const OperatorDashboardPage = lazy(() => import("@/pages/OperatorDashboardPage"));
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
-  useEffect(() => { if (!hash) window.scrollTo(0, 0); }, [pathname, hash]);
+  useEffect(() => {
+    if (!hash) window.scrollTo(0, 0);
+  }, [pathname, hash]);
   return null;
 }
 
 function ThemedToaster() {
   const { resolvedTheme } = useApp();
-  return <Toaster theme={resolvedTheme} position="top-center" richColors closeButton toastOptions={{ style: { fontFamily: "Inter, sans-serif" } }} />;
+  return (
+    <Toaster
+      theme={resolvedTheme}
+      position="top-center"
+      richColors
+      closeButton
+      toastOptions={{ style: { fontFamily: "Inter, sans-serif" } }}
+    />
+  );
 }
 
-const Fallback = () => <div className="p-6"><LoadingSkeleton rows={4} /></div>;
+const Fallback = () => (
+  <div className="p-6">
+    <LoadingSkeleton rows={4} />
+  </div>
+);
 
 export default function App() {
   return (
@@ -45,12 +60,26 @@ export default function App() {
             <ErrorBoundary>
               <Suspense fallback={<Fallback />}>
                 <Routes>
+                  {/* Public Landing Page */}
                   <Route path="/" element={<LandingPage />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/privacy" element={<PrivacyPage />} />
                   <Route path="/terms" element={<TermsPage />} />
+
+                  {/* Top-Level Quick Route Aliases */}
+                  <Route path="/track" element={<Navigate to="/app/track" replace />} />
+                  <Route path="/plan" element={<Navigate to="/app/plan" replace />} />
+                  <Route path="/offline" element={<Navigate to="/app/offline" replace />} />
+                  <Route path="/accessibility" element={<Navigate to="/app/accessibility" replace />} />
+                  <Route path="/stops" element={<Navigate to="/app/stops" replace />} />
+                  <Route path="/alerts" element={<Navigate to="/app/alerts" replace />} />
+                  <Route path="/dashboard" element={<Navigate to="/app" replace />} />
+
+                  {/* Operator Preview */}
                   <Route path="/operator" element={<OperatorDashboardPage />} />
+
+                  {/* Main App Layout */}
                   <Route path="/app" element={<AppLayout />}>
                     <Route index element={<DashboardPage />} />
                     <Route path="track" element={<LiveTrackingPage />} />
@@ -60,10 +89,12 @@ export default function App() {
                     <Route path="occupancy" element={<OccupancyPage />} />
                     <Route path="alerts" element={<AlertsPage />} />
                     <Route path="accessibility" element={<AccessibilityPage />} />
+                    <Route path="offline" element={<OfflinePage />} />
                     <Route path="saved" element={<SavedPage />} />
                     <Route path="profile" element={<ProfilePage />} />
                     <Route path="*" element={<NotFoundPage />} />
                   </Route>
+
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </Suspense>

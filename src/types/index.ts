@@ -1,5 +1,5 @@
 /**
- * Core domain types for BusPudi.
+ * Core domain types for Wayzo.
  * These mirror the shape a future API is expected to return, so mock data
  * in /src/data can be swapped for real responses without touching the UI.
  */

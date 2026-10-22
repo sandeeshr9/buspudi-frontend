@@ -28,12 +28,12 @@ function Shell({ title, lead, children }: { title: string; lead?: string; childr
 
 export function AboutPage() {
   return (
-    <Shell title="About BusPudi" lead="A single, passenger-first view of buses in and around Chennai.">
-      <p>Chennai travellers often juggle several sources to make one trip: a city bus to a terminus, then an intercity coach from a different operator. BusPudi explores what it would look like to bring that journey into one clear interface — live tracking, journey planning, stop boards and alerts together.</p>
+    <Shell title="About Wayzo" lead="Every Bus. Every Route. In One Place.">
+      <p>Chennai travellers often juggle several sources to make one trip: a city bus to a terminus, then an intercity coach from a different operator. Wayzo explores what it would look like to bring that entire journey into one clear interface — live tracking, journey planning, stop departure boards, offline maps, and accessibility support together.</p>
       <h2>What this build is</h2>
       <p>This is a frontend demonstration. Every bus position, timetable, occupancy figure and alert is simulated sample data generated in your browser. Nothing here reflects real-time operator information.</p>
       <h2>What it would take to go live</h2>
-      <p>Real-time tracking depends on operators publishing vehicle positions and timetables (for example as GTFS and GTFS-Realtime feeds) and on agreements to use that data. BusPudi has no partnership with MTC, SETC, TNSTC or any private operator.</p>
+      <p>Real-time tracking depends on operators publishing vehicle positions and timetables (for example as GTFS and GTFS-Realtime feeds) and on agreements to use that data. Wayzo has no partnership with MTC, SETC, TNSTC or any private operator.</p>
       <InfoNote>Want to see it in action? <Link to="/app/track" className="font-medium underline">Open live tracking</Link> or <Link to="/app/plan" className="font-medium underline">plan a journey</Link>.</InfoNote>
     </Shell>
   );
@@ -58,9 +58,9 @@ export function TermsPage() {
   return (
     <Shell title="Terms of use" lead="Please read before relying on anything you see here.">
       <h2>Demonstration only</h2>
-      <p>BusPudi is a prototype. All transport information — bus locations, arrival estimates, timetables, fares, occupancy, accessibility details and alerts — is simulated sample data and must not be used to make travel decisions.</p>
+      <p>Wayzo is a prototype. All transport information — bus locations, arrival estimates, timetables, fares, occupancy, accessibility details and alerts — is simulated sample data and must not be used to make travel decisions.</p>
       <h2>No operator affiliation</h2>
-      <p>Operator names are used only to describe categories of service. BusPudi is not affiliated with, endorsed by, or partnered with any transport operator.</p>
+      <p>Operator names are used only to describe categories of service. Wayzo is not affiliated with, endorsed by, or partnered with any transport operator.</p>
       <h2>Accessibility information</h2>
       <p>Accessibility details are not verified. Always confirm with the operator before travelling.</p>
       <h2>Map data</h2>

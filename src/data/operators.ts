@@ -1,8 +1,8 @@
 import type { Operator, OperatorCode } from "@/types";
 
 /**
- * Operator categories shown in BusPudi.
- * BusPudi has no partnership with any of these operators — this is a demo.
+ * Operator categories shown in Wayzo.
+ * Wayzo has no partnership with any of these operators — this is a demo.
  */
 export const OPERATORS: Record<OperatorCode, Operator> = {
   MTC: {

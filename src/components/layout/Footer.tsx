@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Bus, X } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Logo } from "@/components/common/Logo";
+import { X } from "lucide-react";
 
 export const Footer: React.FC = () => {
   const [activeModal, setActiveModal] = useState<"about" | "contact" | "privacy" | "terms" | null>(null);
@@ -11,68 +13,63 @@ export const Footer: React.FC = () => {
       <footer className="w-full border-t border-[#374151] bg-[#111827] text-xs text-[#9CA3AF]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
-            {/* Col 1: Brand & Mission (5 cols) */}
+            {/* Col 1: Brand & Tagline (5 cols) */}
             <div className="md:col-span-5 space-y-3">
-              <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#0B1220]">
-                  <Bus className="h-4 w-4" />
-                </div>
-                <span className="text-base font-extrabold text-[#F9FAFB]">
-                  BusPudi
-                </span>
-                <span className="rounded bg-[#1F2937] px-2 py-0.5 text-[10px] font-semibold text-[#D1D5DB] border border-[#374151]">
-                  Prototype
-                </span>
-              </div>
-              <p className="max-w-md text-xs leading-relaxed text-[#9CA3AF]">
-                BusPudi is a transport-tech platform created to help intercity bus passengers verify their pickup locations, prevent boarding confusion, and avoid missing buses due to outdated terminal information.
+              <Logo to="/" showTagline={true} />
+              <p className="max-w-md text-xs leading-relaxed text-[#9CA3AF] pt-1">
+                Wayzo is a unified bus tracking and passenger mobility platform bringing city MTC lines, intercity state express buses, and private coaches into one clear interface.
               </p>
               <div className="text-[11px] text-[#64748B]">
-                Focus Area: Chennai Metropolitan Area (Kilambakkam KCBT, Koyambedu CMBT, Tambaram, Madhavaram).
+                Initial Focus: Chennai & Tamil Nadu • Offline Maps & Accessibility Support
               </div>
             </div>
 
-            {/* Col 2: Quick Links (3 cols) */}
+            {/* Col 2: Navigation Links (3 cols) */}
             <div className="md:col-span-3 space-y-2">
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#F9FAFB]">
-                Platform Navigation
+                Core Features
               </h4>
               <ul className="space-y-1.5 text-xs">
                 <li>
-                  <a href="#verify-tool" className="hover:text-white transition">
-                    Verify My Bus Pickup
-                  </a>
+                  <Link to="/app/track" className="hover:text-white transition">
+                    Live Bus Tracking
+                  </Link>
                 </li>
                 <li>
-                  <a href="#service-directory" className="hover:text-white transition">
-                    Sample Service Directory
-                  </a>
+                  <Link to="/app/plan" className="hover:text-white transition">
+                    Journey Planner
+                  </Link>
                 </li>
                 <li>
-                  <a href="#report-confusion" className="hover:text-white transition">
-                    Report Confusion (Demo)
-                  </a>
+                  <Link to="/app/offline" className="hover:text-white transition">
+                    Offline Maps & Routes
+                  </Link>
                 </li>
                 <li>
-                  <a href="#terminal-guide" className="hover:text-white transition">
-                    Chennai Terminal Guide
-                  </a>
+                  <Link to="/app/accessibility" className="hover:text-white transition">
+                    Accessibility & Support
+                  </Link>
                 </li>
                 <li>
-                  <a href="#data-reliability" className="hover:text-white transition">
-                    Data Reliability & Scope
-                  </a>
+                  <Link to="/app/stops" className="hover:text-white transition">
+                    Stops & Departure Boards
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/app/alerts" className="hover:text-white transition">
+                    Transit Service Alerts
+                  </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Col 3: Legal & Modals (4 cols) */}
+            {/* Col 3: Transparency & Legal Modals (4 cols) */}
             <div className="md:col-span-4 space-y-2">
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#F9FAFB]">
                 Transparency & Legal
               </h4>
               <p className="text-xs text-[#9CA3AF] leading-relaxed">
-                Illustrative demonstration datasets only. All mock services and discrepancies are prepared for student transport-tech demonstration.
+                Frontend demonstration prototype. Real-time fleet data is simulated for academic and mobility innovation demonstration.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <button
@@ -80,7 +77,7 @@ export const Footer: React.FC = () => {
                   onClick={() => setActiveModal("about")}
                   className="hover:text-white transition underline"
                 >
-                  About BusPudi
+                  About Wayzo
                 </button>
                 <button
                   type="button"
@@ -110,10 +107,10 @@ export const Footer: React.FC = () => {
           {/* Bottom Copyright & Disclaimer */}
           <div className="mt-8 border-t border-[#374151] pt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-[11px] text-[#64748B]">
             <div>
-              © 2026 BusPudi. Built for Student Innovation & Mobility Verification.
+              © 2026 Wayzo — Every Bus. Every Route. In One Place.
             </div>
             <div>
-              No official affiliation with SETC, TNSTC, CMDA, or private omnibuses.
+              Demonstration prototype • Independent student innovation initiative.
             </div>
           </div>
         </div>
@@ -133,16 +130,16 @@ export const Footer: React.FC = () => {
 
             {activeModal === "about" && (
               <div>
-                <h3 className="text-lg font-bold text-white">About BusPudi</h3>
+                <h3 className="text-lg font-bold text-white">About Wayzo</h3>
                 <div className="mt-3 space-y-3 text-xs leading-relaxed text-[#D1D5DB]">
                   <p>
-                    <strong>BusPudi</strong> ("Verify Your Pickup Before You Travel") was created to solve a pervasive intercity mobility issue: passengers booking online tickets that list outdated, legacy, or ambiguous pickup locations, resulting in frantic last-minute trips or missed buses.
+                    <strong>Wayzo</strong> is built on a single, clear premise: <em>“Every Bus. Every Route. In One Place.”</em>
                   </p>
                   <p>
-                    Following Chennai's major intercity bus terminal reorganization—where south-bound operations relocated to Kilambakkam (KCBT)—many third-party aggregators still issue receipts listing Vadapalani, Koyambedu, or curbside highway stops.
+                    Passengers traveling through Chennai and Tamil Nadu often struggle to coordinate multiple fragmented services—navigating an MTC city bus to a terminal, transferring to an intercity SETC/TNSTC coach, or finding private bus pickup coordinates.
                   </p>
                   <p>
-                    BusPudi serves as an independent pre-travel checkpoint, alerting passengers to potential discrepancies before they leave home.
+                    Wayzo unites live bus tracking, multi-leg journey planning, offline downloadable corridor manifests, stop departure boards, and accessibility filters into a unified, passenger-first interface.
                   </p>
                 </div>
               </div>
@@ -153,16 +150,13 @@ export const Footer: React.FC = () => {
                 <h3 className="text-lg font-bold text-white">Contact & Feedback</h3>
                 <div className="mt-3 space-y-3 text-xs leading-relaxed text-[#D1D5DB]">
                   <p>
-                    Have feedback or questions about the BusPudi prototype? We welcome suggestions from passengers, transport researchers, and competition reviewers.
+                    Have ideas or suggestions for improving Wayzo? We welcome inquiries from transport enthusiasts, reviewers, and passengers.
                   </p>
                   <div className="rounded-lg border border-[#374151] bg-[#111827] p-3 text-xs">
-                    <div className="font-semibold text-white">Student Innovation Project Team</div>
-                    <div className="text-[#9CA3AF] mt-0.5">Email: feedback@buspudi.demo (Sample Contact)</div>
-                    <div className="text-[#9CA3AF]">Location: Chennai, Tamil Nadu, India</div>
+                    <div className="font-semibold text-white">Wayzo Mobility Project Team</div>
+                    <div className="text-[#9CA3AF] mt-0.5">Email: team@wayzo.app (Sample Contact)</div>
+                    <div className="text-[#9CA3AF]">Focus Area: Chennai, Tamil Nadu, India</div>
                   </div>
-                  <p className="text-[11px] text-[#9CA3AF]">
-                    For emergency bus queries or ticket cancellations, please contact your ticketed operator directly.
-                  </p>
                 </div>
               </div>
             )}
@@ -172,10 +166,10 @@ export const Footer: React.FC = () => {
                 <h3 className="text-lg font-bold text-white">Privacy Notice</h3>
                 <div className="mt-3 space-y-3 text-xs leading-relaxed text-[#D1D5DB]">
                   <p>
-                    <strong>Client-Side Processing:</strong> All verification queries and reported confusion logs are handled exclusively within your local browser environment.
+                    <strong>Client-Side Storage:</strong> Saved routes, offline corridor packages, preferences, and demonstration assistance requests are stored strictly in your browser's local storage.
                   </p>
                   <p>
-                    We do not track, transmit, or monetize your travel plans, personal phone numbers, or booking receipts. Local storage items can be cleared at any time via your browser settings or using the "Clear Local Data" button on the Report Confusion tab.
+                    We do not harvest or sell your location coordinates or travel history.
                   </p>
                 </div>
               </div>
@@ -186,10 +180,10 @@ export const Footer: React.FC = () => {
                 <h3 className="text-lg font-bold text-white">Terms of Demonstration</h3>
                 <div className="mt-3 space-y-3 text-xs leading-relaxed text-[#D1D5DB]">
                   <p>
-                    <strong>Advisory Nature:</strong> The information provided by BusPudi is for illustrative and pre-travel verification purposes.
+                    <strong>Simulated Prototype:</strong> All vehicle positions, arrival ETAs, fares, occupancy percentages, and service alerts in this demonstration are simulated sample data generated in the browser.
                   </p>
                   <p>
-                    Because transport schedules and emergency police diversions can shift unexpectedly, BusPudi does not provide an absolute legal guarantee that buses will arrive at specific bays. Passengers remain responsible for confirming their travel status with their operator.
+                    Wayzo is not affiliated with, endorsed by, or partnered with MTC, SETC, TNSTC, or any private transport operator.
                   </p>
                 </div>
               </div>

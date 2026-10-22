@@ -12,6 +12,7 @@ const STRINGS = {
   alerts: { en: "Service alerts", ta: "சேவை அறிவிப்புகள்" },
   alertsShort: { en: "Alerts", ta: "அறிவிப்பு" },
   accessibility: { en: "Accessibility", ta: "அணுகல்தன்மை" },
+  offline: { en: "Offline maps", ta: "ஆஃப்லைன் வரைபடம்" },
   saved: { en: "Saved & offline", ta: "சேமித்தவை" },
   profile: { en: "Profile & settings", ta: "சுயவிவரம்" },
   operator: { en: "Operator preview", ta: "இயக்குநர் பார்வை" },

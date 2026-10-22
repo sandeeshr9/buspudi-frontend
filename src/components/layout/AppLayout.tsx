@@ -87,7 +87,7 @@ export function MobileBottomNav() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent side="bottom" className="gap-2 p-4 pb-8">
           <DialogTitle className="text-base">More</DialogTitle>
-          <DialogDescription className="sr-only">Other BusPudi sections</DialogDescription>
+          <DialogDescription className="sr-only">Other Wayzo sections</DialogDescription>
           <div className="grid grid-cols-3 gap-2">
             {[NAV_PRIMARY[3], ...NAV_SECONDARY, NAV_OPERATOR].map((n) => (
               <Link key={n.to} to={n.to} className="flex flex-col items-center gap-1.5 rounded-xl border p-3 text-center text-xs font-medium hover:bg-muted">

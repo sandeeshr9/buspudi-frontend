@@ -79,7 +79,7 @@ export default function AccessibilityPage() {
       <PageHeader title="Accessibility & passenger support" description="Find accessible services and try the boarding assistance request flow." badge={<DemoBadge />} />
 
       <InfoNote tone="warning">
-        BusPudi currently has <strong>no verified accessibility data</strong>. Features below marked “Demo · not verified” are sample values. Verified information would need to come from the operator or an on-ground audit.
+        Wayzo currently has <strong>no verified accessibility data</strong>. Features below marked “Demo · not verified” are sample values. Verified information would need to come from the operator or an on-ground audit.
       </InfoNote>
 
       <div className="grid gap-4 md:grid-cols-3">

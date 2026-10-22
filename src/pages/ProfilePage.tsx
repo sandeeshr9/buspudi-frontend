@@ -157,7 +157,7 @@ export default function ProfilePage() {
               <SwitchRow id="n1" label="Service alerts" desc="Delays, diversions and cancellations" checked={settings.notifications.serviceAlerts} onChange={(v) => setNotif("serviceAlerts", v)} />
               <SwitchRow id="n2" label="Arrival reminders" desc="Before a saved bus reaches your stop" checked={settings.notifications.arrivalReminders} onChange={(v) => setNotif("arrivalReminders", v)} />
               <SwitchRow id="n3" label="Saved route updates" desc="Changes to routes you've saved" checked={settings.notifications.savedRouteUpdates} onChange={(v) => setNotif("savedRouteUpdates", v)} />
-              <SwitchRow id="n4" label="Product news" desc="Occasional BusPudi updates" checked={settings.notifications.productNews} onChange={(v) => setNotif("productNews", v)} />
+              <SwitchRow id="n4" label="Product news" desc="Occasional Wayzo updates" checked={settings.notifications.productNews} onChange={(v) => setNotif("productNews", v)} />
             </CardContent>
           </Card>
 

@@ -69,7 +69,7 @@ export default function OccupancyPage() {
 
       <div className="flex flex-wrap items-center justify-between gap-3">
         <OperatorFilter selected={ops} onChange={setOps} />
-        <p className="flex items-center gap-1.5 text-xs text-muted-foreground"><Database className="h-3.5 w-3.5" /> Source: BusPudi simulation · as of {formatTime(lastTick)}</p>
+        <p className="flex items-center gap-1.5 text-xs text-muted-foreground"><Database className="h-3.5 w-3.5" /> Source: Wayzo simulation · as of {formatTime(lastTick)}</p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">

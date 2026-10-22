@@ -5,7 +5,7 @@ interface State { error: Error | null }
 export class ErrorBoundary extends Component<{ children: ReactNode }, State> {
   state: State = { error: null };
   static getDerivedStateFromError(error: Error) { return { error }; }
-  componentDidCatch(error: Error) { console.error("BusPudi error:", error); }
+  componentDidCatch(error: Error) { console.error("Wayzo error:", error); }
   render() {
     if (!this.state.error) return this.props.children;
     return (
