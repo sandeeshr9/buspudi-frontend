@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+<<<<<<< HEAD
     --background: #0B1220;
     --foreground: #F9FAFB;
     --card: #1F2937;
@@ -75,3 +76,80 @@
     color: #9CA3AF;
   }
 }
+=======
+    --background: 220 33% 98%;
+    --foreground: 222 68% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 68% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 68% 13%;
+    --primary: 222 68% 13%;
+    --primary-foreground: 0 0% 100%;
+    --brand: 174 84% 36%;
+    --secondary: 220 30% 95%;
+    --secondary-foreground: 222 68% 13%;
+    --muted: 220 30% 95%;
+    --muted-foreground: 220 14% 42%;
+    --accent: 174 70% 94%;
+    --accent-foreground: 174 84% 22%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 65% 36%;
+    --warning: 35 92% 45%;
+    --border: 220 24% 90%;
+    --input: 220 24% 88%;
+    --ring: 174 84% 36%;
+    --radius: 0.75rem;
+  }
+  .dark {
+    --background: 224 50% 7%;
+    --foreground: 210 30% 96%;
+    --card: 224 45% 10%;
+    --card-foreground: 210 30% 96%;
+    --popover: 224 45% 11%;
+    --popover-foreground: 210 30% 96%;
+    --primary: 174 72% 46%;
+    --primary-foreground: 224 60% 8%;
+    --brand: 174 72% 46%;
+    --secondary: 224 35% 16%;
+    --secondary-foreground: 210 30% 96%;
+    --muted: 224 35% 15%;
+    --muted-foreground: 218 16% 66%;
+    --accent: 174 50% 16%;
+    --accent-foreground: 174 70% 70%;
+    --destructive: 0 70% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 55% 46%;
+    --warning: 38 92% 56%;
+    --border: 224 30% 18%;
+    --input: 224 30% 22%;
+    --ring: 174 72% 46%;
+  }
+  * { @apply border-border; }
+  html { -webkit-tap-highlight-color: transparent; }
+  body { @apply bg-background text-foreground font-sans antialiased; font-feature-settings: "cv11", "ss01"; }
+  h1, h2, h3 { @apply font-display tracking-tight; }
+  :focus-visible { @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background; }
+}
+
+@layer utilities {
+  .scrollbar-thin { scrollbar-width: thin; }
+  .tabular { font-variant-numeric: tabular-nums; }
+  .pb-safe { padding-bottom: calc(env(safe-area-inset-bottom) + 4.5rem); }
+}
+
+/* Leaflet theming */
+.leaflet-container { font-family: Inter, system-ui, sans-serif; background: hsl(var(--muted)); z-index: 0; }
+.leaflet-pane, .leaflet-top, .leaflet-bottom { z-index: 1 !important; }
+.leaflet-pane.leaflet-marker-pane { z-index: 3 !important; }
+.leaflet-pane.leaflet-tooltip-pane { z-index: 4 !important; }
+.leaflet-pane.leaflet-popup-pane { z-index: 5 !important; }
+.leaflet-control-attribution { font-size: 10px !important; background: hsl(var(--card) / .85) !important; color: hsl(var(--muted-foreground)) !important; }
+.leaflet-control-attribution a { color: hsl(var(--brand)) !important; }
+.bus-marker { background: transparent; border: 0; }
+.bus-marker .bm { transition: transform .2s ease; }
+.bus-marker:hover .bm { transform: scale(1.12); }
+.leaflet-tooltip.bp-tip { background: hsl(var(--popover)); color: hsl(var(--popover-foreground)); border: 1px solid hsl(var(--border)); border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,.12); font-size: 12px; padding: 4px 8px; }
+.leaflet-tooltip.bp-tip::before { display: none; }
+.reduce-motion *, .reduce-motion *::before, .reduce-motion *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+>>>>>>> origin/main
